@@ -15,6 +15,28 @@ var app = express();
 
 app.use(cors());
 
+// Returning tiles
+router.get(`/:t/VectorTileServer/tile/:z/:x/:y.pbf`, async function (req, res) {
+  busy = true;
+  const t = req.params.t;
+  const z = parseInt(req.params.z);
+  const x = parseInt(req.params.x);
+  const y = parseInt(req.params.y);
+
+  const tilePath = `${esriDir}/${t}/tile/${z}/${x}/${y}.pbf`;
+
+  if (fs.existsSync(tilePath)) {
+    res.sendFile(`${y}.pbf`, { root: `./${esriDir}/${t}/tile/${z}/${x}` });
+    busy = false;
+  } else {
+    console.log(tilePath);
+    res
+      .status(404)
+      .send(`${y}.pbf not found: esriIF/${t}/VectorTileServer/${z}/${x}`);
+    busy = false;
+  }
+});
+
 //Returing an index of VectorTileServer --> make sure that the index.json is ready
 router.get(`/:t/VectorTileServer`, async function (req, res) {
   busy = true;

@@ -7,7 +7,7 @@
   "tileMap": "tilemap",
   "defaultStyles": "resources/styles",
   "tiles": [
-    "https://k96mz.github.io/20250117tilemap/VectorTileServer/tile/{z}/{x}/{y}.pbf"
+    "https://k96mz.net/esriIF/arcgis-readable/VectorTileServer/tile/{z}/{x}/{y}.pbf"
   ],
   "exportTilesAllowed": false,
   "initialExtent": {

@@ -38,7 +38,7 @@ app.use(
   })
 );
 app.use(express.static(htdocsPath));
-app.use('/esriIF/arcgis-readable/VectorTileServer/tilemap', esriIFRouter); //esri interface
+app.use('/esriIF', esriIFRouter); //esri interface
 
 //for http
 // app.listen(port, () => {

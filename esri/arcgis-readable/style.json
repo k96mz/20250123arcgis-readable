@@ -5,7 +5,7 @@
   "sources": {
     "v": {
       "type": "vector",
-      "url": "https://k96mz.net/esriIF/arcgis-readable/VectorTileServer",
+      "url": "https://k96mz.net/rest/services/esriIF/arcgis-readable/VectorTileServer",
       "minzoom": 0,
       "maxzoom": 8,
       "scheme": "xyz"

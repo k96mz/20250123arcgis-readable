@@ -38,7 +38,8 @@ app.use(
   })
 );
 app.use(express.static(htdocsPath));
-app.use('/esriIF', esriIFRouter); //esri interface
+// app.use('/esriIF', esriIFRouter); //esri interface
+app.use('rest/services/esriIF', esriIFRouter); //esri interface
 
 //for http
 // app.listen(port, () => {
